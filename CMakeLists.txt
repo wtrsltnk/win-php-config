@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(win-php-config)
+project(win-php-config NONE)
 
 
 
@@ -73,3 +73,13 @@ else()
 		file(GLOB MARIADB_DIR "${CMAKE_BINARY_DIR}/mariadb-*")
 		file(RENAME "${MARIADB_DIR}" "${CMAKE_SOURCE_DIR}/mariadb/")
 endif()
+
+
+
+# Start all services
+message(STATUS "")
+message(STATUS "Starting php webserver now...")
+execute_process(
+				COMMAND start.bat
+				WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/"
+		)

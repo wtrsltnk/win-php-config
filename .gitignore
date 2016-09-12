@@ -2,3 +2,4 @@ nginx/*
 php/*
 mariadb/*
 .sync
+conf-nginx.conf
