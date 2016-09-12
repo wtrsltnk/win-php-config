@@ -11,7 +11,7 @@ Download this project to your local pc by clicking the "Clone or download" butto
 [Here](http://pcsupport.about.com/od/commandlinereference/f/open-command-prompt.htm) is how. When the command prompt is open, goto the folder where you extracted the project. You can check if you are in the right folder by running the command `DIR *.txt`. This should return the "CMakeLists.txt" file as a result.
 
 ## Step 3: Create temporary build directory
-Run the commands `mkdir build && cd buld` you create and enter a directory with the name "build". You could rename this if you please.
+Run the commands `mkdir build && cd build` you create and enter a directory with the name "build". You could rename this if you please.
 
 ## Step 4: Run cmake
 Run the command `cmake.exe ..\`. This command might take a while depending on the speed of your internet and your machine. When the environment is setup, the phpinfo() page is shown in your browser.
