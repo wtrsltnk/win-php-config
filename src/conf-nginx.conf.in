@@ -7,7 +7,7 @@ events {
 
 
 http {
-    include       nginx\conf\mime.types;
+    include       nginx/conf/mime.types;
     default_type  application/octet-stream;
 
     sendfile        on;
@@ -17,7 +17,7 @@ http {
     server {
         listen       8383;
         server_name  localhost;
-        root   @CMAKE_SOURCE_DIR@\htdocs;
+        root   @CMAKE_SOURCE_DIR@/htdocs;
         index  index.html index.htm index.php;
 
         location / {
@@ -37,10 +37,10 @@ http {
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
-         location ~ \.php$ {
+         location ~ /.php$ {
             fastcgi_pass  127.0.0.1:9000;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            include       nginx\conf\fastcgi_params;
+            include       nginx/conf/fastcgi_params;
         }
         
         #Fighting with ImageCache? This little gem is amazing.
@@ -53,7 +53,7 @@ http {
             try_files $uri @rewrite;
         }
 
-        location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+        location ~* /.(js|css|png|jpg|jpeg|gif|ico)$ {
             expires max;
             log_not_found off;
         }
