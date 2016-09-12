@@ -17,7 +17,7 @@ http {
     server {
         listen       8383;
         server_name  localhost;
-        root   C:\Misc\Programs\drupal\drupal-8.1.8;
+        root   @CMAKE_SOURCE_DIR@\htdocs;
         index  index.html index.htm index.php;
 
         location / {
