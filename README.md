@@ -1,1 +1,1 @@
-"# win-php-config" 
+# win-php-config
