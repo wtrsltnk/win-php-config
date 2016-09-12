@@ -11,7 +11,7 @@ set(MARIADB_URL "https://downloads.mariadb.org/interstitial/mariadb-10.1.17/win3
 
 # Generate nginx config file
 file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/htdocs/")
-configure_file("${CMAKE_SOURCE_DIR}/conf-nginx.conf.in" "${CMAKE_SOURCE_DIR}/conf-nginx.conf" @ONLY)
+configure_file("${CMAKE_SOURCE_DIR}/nginx.in" "${CMAKE_SOURCE_DIR}/conf-nginx.conf" @ONLY)
 
 
 
