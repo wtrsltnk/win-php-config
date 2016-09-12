@@ -19,61 +19,61 @@ configure_file("${CMAKE_SOURCE_DIR}/src/conf-my.ini.in" "${CMAKE_SOURCE_DIR}/con
 
 # PHP
 if(EXISTS "${CMAKE_BINARY_DIR}/php.zip")
-		message(STATUS "Found php.zip")
+    message(STATUS "Found php.zip")
 else()
-		file(DOWNLOAD ${PHP_URL} ${CMAKE_BINARY_DIR}/php.zip SHOW_PROGRESS)
+    file(DOWNLOAD ${PHP_URL} ${CMAKE_BINARY_DIR}/php.zip SHOW_PROGRESS)
 endif()
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/php")
-		message(STATUS "Nginx already extracted")
+    message(STATUS "Nginx already extracted")
 else()
-		file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/php/")
-		execute_process(
-				COMMAND ${CMAKE_COMMAND} -E tar xzf ${CMAKE_BINARY_DIR}/php.zip
-				WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/php/"
-		)
-		file(GLOB PHP_DIR "${CMAKE_BINARY_DIR}/php")
-		file(RENAME "${PHP_DIR}" "${CMAKE_SOURCE_DIR}/php/")
+    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/php/")
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -E tar xzf ${CMAKE_BINARY_DIR}/php.zip
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/php/"
+    )
+    file(GLOB PHP_DIR "${CMAKE_BINARY_DIR}/php")
+    file(RENAME "${PHP_DIR}" "${CMAKE_SOURCE_DIR}/php/")
 endif()
 
 
 
 # NGINX
 if(EXISTS "${CMAKE_BINARY_DIR}/nginx.zip")
-		message(STATUS "Found nginx.zip")
+    message(STATUS "Found nginx.zip")
 else()
-		file(DOWNLOAD ${NGINX_URL} ${CMAKE_BINARY_DIR}/nginx.zip SHOW_PROGRESS)
+    file(DOWNLOAD ${NGINX_URL} ${CMAKE_BINARY_DIR}/nginx.zip SHOW_PROGRESS)
 endif()
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/nginx")
-		message(STATUS "Nginx already extracted")
+    message(STATUS "Nginx already extracted")
 else()
-		execute_process(
-				COMMAND ${CMAKE_COMMAND} -E tar xzf ${CMAKE_BINARY_DIR}/nginx.zip
-				WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/"
-		)
-		file(GLOB NGINX_DIR "${CMAKE_BINARY_DIR}/nginx-*")
-		file(RENAME "${NGINX_DIR}" "${CMAKE_SOURCE_DIR}/nginx/")
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -E tar xzf ${CMAKE_BINARY_DIR}/nginx.zip
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/"
+    )
+    file(GLOB NGINX_DIR "${CMAKE_BINARY_DIR}/nginx-*")
+    file(RENAME "${NGINX_DIR}" "${CMAKE_SOURCE_DIR}/nginx/")
 endif()
 
 
 
 # MARIA DB
 if(EXISTS "${CMAKE_BINARY_DIR}/mariadb.zip")
-		message(STATUS "Found mariadb.zip")
+    message(STATUS "Found mariadb.zip")
 else()
-		file(DOWNLOAD ${MARIADB_URL} "${CMAKE_BINARY_DIR}/mariadb.zip" SHOW_PROGRESS)
+    file(DOWNLOAD ${MARIADB_URL} "${CMAKE_BINARY_DIR}/mariadb.zip" SHOW_PROGRESS)
 endif()
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/mariadb")
-		message(STATUS "Mariadb already extracted")
+    message(STATUS "Mariadb already extracted")
 else()
-		execute_process(
-				COMMAND ${CMAKE_COMMAND} -E tar xzf "${CMAKE_BINARY_DIR}/mariadb.zip"
-				WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/"
-		)
-		file(GLOB MARIADB_DIR "${CMAKE_BINARY_DIR}/mariadb-*")
-		file(RENAME "${MARIADB_DIR}" "${CMAKE_SOURCE_DIR}/mariadb/")
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -E tar xzf "${CMAKE_BINARY_DIR}/mariadb.zip"
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/"
+    )
+    file(GLOB MARIADB_DIR "${CMAKE_BINARY_DIR}/mariadb-*")
+    file(RENAME "${MARIADB_DIR}" "${CMAKE_SOURCE_DIR}/mariadb/")
 endif()
 
 
@@ -82,6 +82,6 @@ endif()
 message(STATUS "")
 message(STATUS "Starting php webserver now...")
 execute_process(
-				COMMAND start.bat
-				WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/"
-		)
+        COMMAND start.bat
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/"
+    )
