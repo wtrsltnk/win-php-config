@@ -19,6 +19,6 @@ Run the command `cmake.exe ..\`. This command might take a while depending on th
 ## Step 5: Stop the server
 To stop the server, you can hit ctrl+c while in the command prompt. Another way is through browsing to the project folder in windows explorer and run the `stop.bat` file.
 
-That's it. The served info.php can be found in the htdocs of project directory. There you can add more files to serve...
+That's it. The served info.php can be found in the htdocs/ of project directory. There you can add more files to serve...
 
-When you want more, try altering the conf-nginx.conf file with the help of the [nginx documentation](http://nginx.org/en/docs/beginners_guide.html). 
+If you want more, try altering the conf-nginx.conf file with the help of the [nginx documentation](http://nginx.org/en/docs/beginners_guide.html). 
