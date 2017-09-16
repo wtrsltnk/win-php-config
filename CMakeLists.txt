@@ -3,9 +3,9 @@ project(win-php-config NONE)
 
 
 
-set(PHP_URL "http://windows.php.net/downloads/releases/php-7.0.10-nts-Win32-VC14-x86.zip")
+set(PHP_URL "http://windows.php.net/downloads/releases/php-7.1.9-Win32-VC14-x86.zip")
 set(NGINX_URL "http://nginx.org/download/nginx-1.11.3.zip")
-set(MARIADB_URL "https://downloads.mariadb.org/interstitial/mariadb-10.1.17/win32-packages/mariadb-10.1.17-win32.zip")
+set(MARIADB_URL "http://mirror.i3d.net/pub/mariadb//mariadb-10.2.8/win32-packages/mariadb-10.2.8-win32.zip")
 
 
 
